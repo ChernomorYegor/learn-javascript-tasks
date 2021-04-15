@@ -73,3 +73,15 @@
 //
 // alert(a + b); // 12
 // alert(+a + +b); // 3 - correct solution
+
+
+// 2.9 Comparisons
+
+// 2.9.1
+// 5 > 4 // true
+// "apple" > "pineapple" // false
+// "2" > "12" // true
+// undefined == null // true
+// undefined === null // false
+// null == "\n0\n" // false
+// null === +"\n0\n" // false
