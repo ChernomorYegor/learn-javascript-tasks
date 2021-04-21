@@ -91,27 +91,27 @@
 
 // 2.10.1
 // if ("0") {
-//     alert( 'Hello' );
+//   alert( 'Hello' );
 // } // Yes, alert will be shown
 
 // 2.10.2
 // let answer = prompt("What is the “official” name of JavaScript?", "");
 //
 // if (answer === "ECMAScript") {
-//     alert("Right!");
+//   alert("Right!");
 // } else {
-//     alert("You don’t know? ECMAScript!");
+//   alert("You don’t know? ECMAScript!");
 // }
 
 // 2.10.3
 // let writtenNum = prompt("Write a number", "");
 //
 // if (writtenNum > 0) {
-//     alert(1);
+//   alert(1);
 // } else if (writtenNum < 0) {
-//     alert(-1);
+//   alert(-1);
 // } else {
-//     alert(0);
+//   alert(0);
 // }
 
 // 2.10.4
@@ -119,6 +119,6 @@
 
 // 2.10.5
 // let message = (login == 'Employee') ? 'Hello' :
-//     (login == 'Director') ? 'Greetings' :
-//     (login == '') ? 'No login' :
-//     '';
+//   (login == 'Director') ? 'Greetings' :
+//   (login == '') ? 'No login' :
+//   '';
