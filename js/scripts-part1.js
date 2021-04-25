@@ -122,3 +122,54 @@
 //   (login == 'Director') ? 'Greetings' :
 //   (login == '') ? 'No login' :
 //   '';
+
+
+// 2.11 Logical operators
+
+// 2.11.1
+// alert( null || 2 || undefined ); // 2
+
+// 2.11.2
+// alert( alert(1) || 2 || alert(3) ); // alert(1) returns undefined so first 1 then 2
+
+// 2.11.3
+// alert( 1 && null && 2 ); // null
+
+// 2.11.4
+// alert( alert(1) && alert(2) ); // 1, undefined
+
+// 2.11.5
+// alert( null || 2 && 3 || 4 ); // 3
+
+// 2.11.6
+// if (age >= 14 && age <= 90)
+
+// 2.11.7
+// if ( !(age >= 14 && age <= 90) )
+// if (age < 14 || age > 90)
+
+// 2.11.8
+// if (-1 || 0) alert( 'first' ); // -1, yes
+// if (-1 && 0) alert( 'second' ); // 0, no
+// if (null || -1 && 1) alert( 'third' ); // 1, yes
+
+// 2.11.9
+// let login = prompt("Who's there?", "");
+//
+// if (login === "Admin") {
+//
+//   let password = prompt("Password?", "");
+//
+//   if (password === "TheMaster") {
+//     alert("Welcome!");
+//   } else if (!password) {
+//     alert("Canceled");
+//   } else {
+//     alert("Wrong password");
+//   }
+//
+// } else if (!login) {
+//   alert("Canceled");
+// } else {
+//   alert("I don't know you");
+// }
