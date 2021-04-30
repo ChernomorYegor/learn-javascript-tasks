@@ -173,3 +173,95 @@
 // } else {
 //   alert("I don't know you");
 // }
+
+
+// 2.13 Loops: while and for
+
+// 2.13.1
+// let i = 3;
+//
+// while (i) {
+//   alert( i-- );
+// } // 3, 2, 1
+
+// 2.13.2
+// The prefix form ++i:
+// let i = 0;
+// while (++i < 5) alert( i ); // 1, 2, 3, 4
+//
+// The postfix form i++:
+// let i = 0;
+// while (i++ < 5) alert( i ); // 1, 2, 3, 4, 5
+
+// 2.13.3
+// The postfix form:
+// for (let i = 0; i < 5; i++) alert( i ); // 0, 1, 2, 3, 4
+//
+// The prefix form:
+// for (let i = 0; i < 5; ++i) alert( i ); // 0, 1, 2, 3, 4
+
+// 2.13.4
+// for (let i = 2; i <= 10; i++) {
+//   if (i % 2 === 0) {
+//     alert( i );
+//   }
+// }
+
+// 2.13.5
+// let i = 0;
+//
+// while (i < 3) {
+//   alert( `number ${i}!` );
+//   i++;
+// }
+
+// 2.13.6
+// My version:
+// let num = 0;
+//
+// while (num <= 100) {
+//   num = prompt("Enter a number greater than 100?", "0");
+//   if (num == null) break;
+// }
+//
+// Original version:
+// let num;
+//
+// do {
+//   num = prompt("Enter a number greater than 100?", 0);
+// } while (num <= 100 && num);
+
+// 2.13.7
+// My version:
+// let n = prompt("Find all prime numbers up to", "");
+//
+// if (!n) {
+//  alert("Canceled");
+// }
+//
+// for (let i = 2; i < n; i++) {
+//   let isPrime = true;
+//
+//   for (let j = i - 1; j >= 2; j--) {
+//     if (i % j === 0) {
+//       isPrime = false;
+//       break;
+//     }
+//   }
+//
+//   if (isPrime) {
+//     alert( i );
+//   }
+// }
+//
+// Original version:
+// let n = 10;
+//
+// nextPrime: for (let i = 2; i <= n; i++) { // for each i...
+//
+//   for (let j = 2; j < i; j++) { // look for a divisor..
+//     if (i % j == 0) continue nextPrime; // not a prime, go next i
+//   }
+//
+//   alert( i ); // a prime
+// }
