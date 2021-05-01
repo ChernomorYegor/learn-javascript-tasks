@@ -265,3 +265,36 @@
 //
 //   alert( i ); // a prime
 // }
+
+
+// 2.14 The "switch" statement
+
+// 2.14.1
+// if (browser === 'Edge') {
+//   alert( "You've got the Edge!" );
+// } else if (browser === 'Chrome'
+//     || browser === 'Firefox'
+//     || browser === 'Safari'
+//     || browser === 'Opera') {
+//   alert( 'Okay we support these browsers too' );
+// } else {
+//   alert( 'We hope that this page looks ok!' );
+// }
+
+// 2.14.2
+// const number = +prompt('Enter a number between 0 and 3', '');
+//
+// switch (number) {
+//   case 0:
+//     alert( 'You entered the number 0' );
+//     break;
+//
+//   case 1:
+//     alert( 'You entered the number 1' );
+//     break;
+//
+//   case 2:
+//   case 3:
+//     alert( 'You entered the number 2 or maybe 3' );
+//     break;
+// }
