@@ -298,3 +298,37 @@
 //     alert( 'You entered the number 2 or maybe 3' );
 //     break;
 // }
+
+
+// 2.15 Functions
+
+// 2.15.1
+// No
+
+// 2.15.2
+// function checkAge(age) {
+//   return (age > 18) ? true : confirm('Did parents allow you?');
+// }
+//
+// function checkAge(age) {
+//   return (age > 18) || confirm('Did parents allow you?');
+// }
+
+// 2.15.3
+// function min(a, b) {
+//   return (a < b) ? a : b;
+// }
+
+// 2.15.4
+// let x = +prompt('Enter a number you want to raise to the power', '');
+// let n = +prompt('Enter a power of the number (only natural values)', '');
+//
+// function pow(x, n) {
+//   return Math.pow(x, n);
+// }
+//
+// if (!x || !n || n < 1) {
+//   alert( 'Incorrect data entered' );
+// } else {
+//   alert( 'Result: ' + pow(x, n) );
+// }
