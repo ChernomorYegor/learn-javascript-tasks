@@ -332,3 +332,18 @@
 // } else {
 //   alert( 'Result: ' + pow(x, n) );
 // }
+
+
+// 2.17 Arrow functions, the basics
+
+// 2.17.1
+// function ask(question, yes, no) {
+//   if (confirm(question)) yes();
+//   else no();
+// }
+//
+// ask(
+//     "Do you agree?",
+//     () => alert("You agreed."), // * Changed
+//     () => alert("You canceled the execution.") // * Changed
+// );
