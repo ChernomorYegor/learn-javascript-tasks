@@ -474,3 +474,63 @@
 //     }
 //   }
 // }
+
+
+// 4.4 Object methods, "this"
+
+// 4.4.1
+// Error (It needs a semicolon after let user = {...};)
+
+// 4.4.2
+// let obj, method;
+//
+// obj = {
+//   go: function() { alert(this); }
+// };
+//
+// obj.go();               // (1) [object Object]
+//
+// (obj.go)();             // (2) [object Object] ( (obj.go)() equals obj.go() )
+//
+// (method = obj.go)();    // (3) undefined (method = function() { alert(this); })
+//
+// (obj.go || obj.stop)(); // (4) undefined (method = function() { alert(this); })
+
+// 4.4.3
+// Error (this is undefined)
+
+// 4.4.4
+// let calculator = {
+//   read: function() {
+//     this.a = +prompt("a?", 0);
+//     this.b = +prompt("b?", 0);
+//   },
+//   sum: function() {
+//     return this.a + this.b;
+//   },
+//   mul: function() {
+//     return this.a * this.b;
+//   }
+// };
+//
+// calculator.read();
+// alert( calculator.sum() );
+// alert( calculator.mul() );
+
+// 4.4.5
+// let ladder = {
+//   step: 0,
+//   up() {
+//     this.step++;
+//     return this; // * Added
+//   },
+//   down() {
+//     this.step--;
+//     return this; // * Added
+//   },
+//   showStep: function() {
+//     alert( this.step );
+//   }
+// };
+//
+// ladder.up().up().down().showStep(); // 1
