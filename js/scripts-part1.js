@@ -2,6 +2,7 @@
 // Part 1. The JavaScript language
 
 
+
 // 2.4 Variables
 
 // 2.4.1
@@ -22,6 +23,7 @@
 // const age = someCode(BIRTHDAY); // No
 
 
+
 // 2.5 Data types
 
 // 2.5.1
@@ -32,11 +34,13 @@
 // alert( `hello ${name}` ); // hello Ilya
 
 
+
 // 2.6 Interaction: alert, prompt, confirm
 
 // 2.6.1
 // let userName = prompt("What is your name?", "");
 // alert(userName);
+
 
 
 // 2.8 Basic operators, maths
@@ -75,6 +79,7 @@
 // alert(+a + +b); // 3 - correct solution
 
 
+
 // 2.9 Comparisons
 
 // 2.9.1
@@ -85,6 +90,7 @@
 // undefined === null // false
 // null == "\n0\n" // false
 // null === +"\n0\n" // false
+
 
 
 // 2.10 Conditional branching: if, '?'
@@ -122,6 +128,7 @@
 //   (login == 'Director') ? 'Greetings' :
 //   (login == '') ? 'No login' :
 //   '';
+
 
 
 // 2.11 Logical operators
@@ -173,6 +180,7 @@
 // } else {
 //   alert("I don't know you");
 // }
+
 
 
 // 2.13 Loops: while and for
@@ -267,6 +275,7 @@
 // }
 
 
+
 // 2.14 The "switch" statement
 
 // 2.14.1
@@ -298,6 +307,7 @@
 //     alert( 'You entered the number 2 or maybe 3' );
 //     break;
 // }
+
 
 
 // 2.15 Functions
@@ -334,6 +344,7 @@
 // }
 
 
+
 // 2.17 Arrow functions, the basics
 
 // 2.17.1
@@ -347,6 +358,7 @@
 //     () => alert("You agreed."), // * Changed
 //     () => alert("You canceled the execution.") // * Changed
 // );
+
 
 
 // 3.2 Coding Style
@@ -391,6 +403,7 @@
 // }
 
 
+
 // 3.5 Automated testing with Mocha
 
 // 3.5.1
@@ -423,6 +436,7 @@
 //     assert.equal(pow(5, 3), 125);
 //   });
 // });
+
 
 
 // 4.1 Objects
@@ -474,6 +488,7 @@
 //     }
 //   }
 // }
+
 
 
 // 4.4 Object methods, "this"
@@ -536,6 +551,7 @@
 // ladder.up().up().down().showStep(); // 1
 
 
+
 // 4.5 Constructor, operator "new"
 
 // 4.5.1
@@ -588,6 +604,7 @@
 // accumulator.read(); // adds the user-entered value
 //
 // alert(accumulator.value); // shows the sum of these values
+
 
 
 // 5.1 Constructor, operator "new"
