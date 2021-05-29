@@ -607,7 +607,7 @@
 
 
 
-// 5.1 Constructor, operator "new"
+// 5.1 Methods of primitives
 
 // 5.1.1
 // let str = "Hello";
