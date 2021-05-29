@@ -588,3 +588,13 @@
 // accumulator.read(); // adds the user-entered value
 //
 // alert(accumulator.value); // shows the sum of these values
+
+
+// 5.1 Constructor, operator "new"
+
+// 5.1.1
+// let str = "Hello";
+//
+// str.test = 5;
+//
+// alert(str.test); // It will show us an error (strict mode) and undefined (no strict mode)
