@@ -74,3 +74,42 @@
 // }
 //
 // alert( randomInteger(1, 5) );
+
+
+
+// 5.3 Strings
+
+// 5.3.1
+// My solution:
+// function ucFirst(str) {
+//   return (!str) ? '' : str[0].toUpperCase() + str.slice(1);
+// }
+//
+// Original solution:
+// function ucFirst(str) {
+//   if (!str) return str;
+//
+//   return str[0].toUpperCase() + str.slice(1);
+// }
+//
+// alert( ucFirst("john") ); // John
+
+// 5.3.2
+// function checkSpam(str) {
+//   let strLowerCase = str.toLowerCase();
+//   return strLowerCase.includes('viagra') || strLowerCase.includes('xxx');
+// }
+//
+// alert( checkSpam('buy ViAgRA now') );
+// alert( checkSpam('free xxxxx') );
+// alert( checkSpam("innocent rabbit") );
+
+// 5.3.3
+// function truncate(str, maxlength) {
+//   return (str.length > maxlength) ? str.slice(0, maxlength - 1) + "…" : str;
+// }
+
+// 5.3.4
+// function extractCurrencyValue(str) {
+//   return +str.slice(1);
+// }
