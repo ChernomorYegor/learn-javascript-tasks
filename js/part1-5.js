@@ -16,8 +16,8 @@
 // 5.2 Numbers
 
 // 5.2.1
-// let num1 = +prompt("The first number?", "");
-// let num2 = +prompt("The second number?", "");
+// let num1 = +prompt("The first value?", "");
+// let num2 = +prompt("The second value?", "");
 //
 // alert(num1 + num2);
 
@@ -27,13 +27,13 @@
 // 5.2.3
 // My solution:
 // function readNumber() {
-//   let number = prompt("Enter a number please?", "0");
+//   let value = prompt("Enter a value please?", "0");
 //
-//   if (!isFinite(+number)) {
+//   if (!isFinite(+value)) {
 //     return readNumber();
 //   }
 //
-//   return number ? +number : null;
+//   return value ? +value : null;
 // }
 //
 // alert(`Read: ${readNumber()}`);
@@ -43,7 +43,7 @@
 //   let num;
 //
 //   do {
-//     num = prompt("Enter a number please?", 0);
+//     num = prompt("Enter a value please?", 0);
 //   } while ( !isFinite(num) );
 //
 //   if (num === null || num === '') return null;
@@ -112,4 +112,110 @@
 // 5.3.4
 // function extractCurrencyValue(str) {
 //   return +str.slice(1);
+// }
+
+
+
+// 5.4 Arrays
+
+// 5.4.1
+// let fruits = ["Apples", "Pear", "Orange"];
+//
+// // push a new value into the "copy"
+// let shoppingCart = fruits;
+// shoppingCart.push("Banana");
+//
+// // what's in fruits?
+// alert( fruits.length ); // 4
+
+// 5.4.2
+// let styles = ["Jazz", "Blues"];
+// styles.push("Rock-n-Roll");
+// styles[Math.floor(styles.length - 1 / 2)] = "Classics";
+// alert( styles.shift() );
+// styles.unshift("Rap", "Reggae");
+//
+// alert( styles );
+
+// 5.4.3
+// let arr = ["a", "b"];
+//
+// arr.push(function() {
+//   alert( this );
+// })
+//
+// arr[2](); // "a","b",function() {...}
+
+// 5.4.4
+// function sumInput() {
+//   let arrNumbers = [];
+//   let sum = 0;
+//   let value;
+//
+//   while (true) {
+//     value = prompt("A number please?", "0");
+//
+//     if (!isFinite(value) || value === "" || value === null) {
+//       break;
+//     }
+//
+//     arrNumbers.push(+value);
+//   }
+//
+//   for (let i = 0; i < arrNumbers.length; i++) {
+//     sum += arrNumbers[i];
+//   }
+//
+//   return sum;
+// }
+//
+// alert( sumInput() );
+
+// 5.4.5
+// My solution:
+// function getMaxSubSum(arr) {
+//   let maxSubSum = 0;
+//   let subSum = 0;
+//
+//   for (let i = 0; i < arr.length; i++) {
+//
+//     if (subSum + arr[i] < subSum && subSum + arr[i] + arr[i + 1] < subSum) {
+//       if (subSum > maxSubSum) {
+//         maxSubSum = subSum;
+//       }
+//
+//       subSum = 0;
+//
+//       continue;
+//     }
+//
+//     if (i === arr.length - 1 && arr[i] < 0) {
+//       maxSubSum = subSum;
+//     }
+//
+//     subSum += arr[i];
+//
+//     if (subSum < 0) {
+//       subSum = 0;
+//     }
+//
+//     if (i === arr.length - 1 && subSum > maxSubSum) {
+//       maxSubSum = subSum;
+//     }
+//   }
+//
+//   return maxSubSum;
+// }
+//
+// Original solution:
+// function getMaxSubSum(arr) {
+//   let maxSum = 0;
+//   let partialSum = 0;
+//
+//   for (let item of arr) {
+//     partialSum += item;
+//     maxSum = Math.max(maxSum, partialSum);
+//     if (partialSum < 0) partialSum = 0;
+//   }
+//   return maxSum;
 // }
