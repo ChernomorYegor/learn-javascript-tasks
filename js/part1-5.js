@@ -219,3 +219,218 @@
 //   }
 //   return maxSum;
 // }
+
+
+
+// 5.5 Array methods
+
+// 5.5.1
+// function camelize(str) {
+//   return str
+//     .split('-')
+//     .map((word, index) => index > 0 ? word[0].toUpperCase() + word.slice(1) : word)
+//     .join('');
+// }
+
+// 5.5.2
+// function filterRange(arr, a, b) {
+//   return arr.filter(item => (a <= item && item <= b));
+// }
+
+// 5.5.3
+// function filterRangeInPlace(arr, a, b) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (a > arr[i] || arr[i] > b) {
+//       arr.splice(i, 1);
+//       i--;
+//     }
+//   }
+// }
+
+// 5.5.4
+// let arr = [5, 2, 1, -10, 8];
+//
+// arr.sort((a, b) => b - a);
+//
+// alert( arr ); // 8, 5, 2, 1, -10
+
+// 5.5.5
+// function copySorted(arr) {
+//   return arr.slice().sort();
+// }
+//
+// let arr = ["HTML", "JavaScript", "CSS"];
+//
+// let sorted = copySorted(arr);
+//
+// alert( sorted ); // CSS, HTML, JavaScript
+// alert( arr ); // HTML, JavaScript, CSS (no changes)
+
+// 5.5.6
+// function Calculator() {
+//
+//   this.methods = {
+//     '+': (a, b) => a + b,
+//     '-':  (a, b) => a - b,
+//   };
+//
+//   this.calculate = function(str) {
+//     let arr = str.split(' ');
+//     let operator = arr[1];
+//     let num1 = +arr[0];
+//     let num2 = +arr[2];
+//
+//     if (!this.methods[operator] || isNaN(num1) || isNaN(num2)) {
+//       return NaN;
+//     }
+//
+//     return this.methods[operator](num1, num2);
+//   };
+//
+//   this.addMethod = function(name, func) {
+//     this.methods[name] = func;
+//   };
+// }
+
+// 5.5.7
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+//
+// let users = [ john, pete, mary ];
+//
+// let names = users.map(user => user.name);
+//
+// alert( names ); // John, Pete, Mary
+
+// 5.5.8
+// let john = { name: "John", surname: "Smith", id: 1 };
+// let pete = { name: "Pete", surname: "Hunt", id: 2 };
+// let mary = { name: "Mary", surname: "Key", id: 3 };
+//
+// let users = [ john, pete, mary ];
+//
+// let usersMapped = users.map(user => ({ fullName: `${user.name} ${user.surname}`, id: user.id }) );
+//
+//   /*
+//   usersMapped = [
+//     { fullName: "John Smith", id: 1 },
+//     { fullName: "Pete Hunt", id: 2 },
+//     { fullName: "Mary Key", id: 3 }
+//   ]
+//   */
+//
+// alert( usersMapped[0].id ) // 1
+// alert( usersMapped[0].fullName ) // John Smith
+
+// 5.5.9
+// function sortByAge(array) {
+//   array.sort((a, b) => a.age - b.age);
+// }
+//
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+//
+// let arr = [ pete, john, mary ];
+//
+// sortByAge(arr);
+//
+// // now: [john, mary, pete]
+// alert(arr[0].name); // John
+// alert(arr[1].name); // Mary
+// alert(arr[2].name); // Pete
+
+// 5.5.10
+// let arr = [1, 2, 3];
+//
+// My solution:
+// function shuffle(array) {
+//   let arrTemp = array.slice();
+//
+//   arr.length = 0;
+//
+//   for (let i = 0; i < arrTemp.length; i++) {
+//     let pos = Math.floor(Math.random() * arrTemp.length);
+//
+//     if (!arr[pos] && arr[pos] !== 0) {
+//       arr[pos] = arrTemp[i]
+//     } else {
+//       i--;
+//     }
+//   }
+// }
+//
+// Original solution (the best):
+// function shuffle(array) {
+//   for (let i = array.length - 1; i > 0; i--) {
+//     let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+//
+//     [array[i], array[j]] = [array[j], array[i]]; // let t = array[i]; array[i] = array[j]; array[j] = t
+//   }
+// }
+//
+// let count = {
+//   '123': 0,
+//   '132': 0,
+//   '213': 0,
+//   '231': 0,
+//   '321': 0,
+//   '312': 0
+// };
+//
+// for (let i = 0; i < 1000000; i++) {
+//   shuffle(arr);
+//   count[arr.join('')]++;
+// }
+//
+// // show counts of all possible permutations
+// for (let key in count) {
+//   alert(`${key}: ${count[key]}`);
+// }
+
+// 5.5.11
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 29 };
+//
+// let arr = [ vasya, petya, masha ];
+//
+// alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+//
+// function getAverageAge(users) {
+//   return users.reduce((sum, user) => sum + user.age, 0) / users.length;
+// }
+
+// 5.5.12
+// My solution number 1:
+// function unique(arr) {
+//   let arrUniques = [];
+//
+//   for (let item of arr) {
+//     if (!arrUniques.includes(item)) {
+//       arrUniques.push(item);
+//     }
+//   }
+//
+//   return arrUniques;
+// }
+//
+// My solution number 2:
+// function unique(arr) {
+//   return Array.from(new Set(arr));
+// }
+//
+// let strings = ["Hare", "Krishna", "Hare", "Krishna",
+//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+//
+// alert( unique(strings) ); // Hare, Krishna, :-O
+
+// 5.5.13
+// function groupById(arr) {
+//   return arr.reduce((usersById, user) => {
+//     usersById[user.id] = user;
+//     return usersById;
+//   }, {});
+// }
