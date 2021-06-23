@@ -434,3 +434,76 @@
 //     return usersById;
 //   }, {});
 // }
+
+
+
+// 5.7 Map and Set
+
+// 5.7.1
+// function unique(arr) {
+//   return Array.from(new Set(arr));
+// }
+//
+// let values = ["Hare", "Krishna", "Hare", "Krishna",
+//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+//
+// alert( unique(values) ); // Hare,Krishna,:-O
+
+// 5.7.2
+// My solution:
+// function aclean(arr) {
+//   let anSet = new Set();
+//   let anCleanArr = [];
+//
+//   for (let word of arr) {
+//     let wordSorted = word.toLowerCase().split("").sort().join("");
+//
+//     if (!anSet.has(wordSorted)) {
+//       anSet.add(wordSorted);
+//       anCleanArr.push(word);
+//     }
+//   }
+//
+//   return anCleanArr;
+// }
+//
+// Original solution number 1:
+// function aclean(arr) {
+//   let map = new Map();
+//
+//   for (let word of arr) {
+//     let sorted = word.toLowerCase().split('').sort().join('');
+//
+//     map.set(sorted, word);
+//   }
+//
+//   return Array.from(map.values());
+// }
+//
+// Original solution number 2:
+// function aclean(arr) {
+//   let obj = {};
+//
+//   for (let i = 0; i < arr.length; i++) {
+//     let sorted = arr[i].toLowerCase().split("").sort().join("");
+//     obj[sorted] = arr[i];
+//   }
+//
+//   return Object.values(obj);
+// }
+//
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+//
+// alert( aclean(arr) ); // "nap,teachers,ear"
+
+// 5.7.3
+// let map = new Map();
+//
+// map.set("name", "John");
+//
+// let keys = Array.from(map.keys());
+//
+// keys.push("more");
+//
+// alert( keys ); // name, more
