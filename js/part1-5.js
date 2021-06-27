@@ -586,3 +586,63 @@
 // function count(obj) {
 //   return Object.keys(obj).length; // Also Object.values(obj).length or Object.entries(obj).length;
 // }
+
+
+
+// 5.10 Destructuring assignment
+
+// 5.10.1
+// let user = {
+//   name: "John",
+//   years: 30
+// };
+//
+// let {name, years: age, isAdmin = false} = user;
+//
+// alert( name ); // John
+// alert( age ); // 30
+// alert( isAdmin ); // false
+
+// 5.10.2
+// let salaries = {
+//   "John": 100,
+//   "Pete": 300,
+//   "Mary": 250
+// };
+//
+// // My solution:
+// function topSalary(salaries) {
+//   if (!Object.keys(salaries).length) {
+//     return null;
+//   }
+//
+//   let topSalaryEmployeeName = "";
+//   let topEmployeeSalary = 0;
+//
+//   for (let [name, salary] of Object.entries(salaries)) {
+//     if (salary > topEmployeeSalary) {
+//       topSalaryEmployeeName = name;
+//       topEmployeeSalary = salary;
+//     }
+//   }
+//
+//   return topSalaryEmployeeName;
+// }
+//
+// // Original solution:
+// function topSalary(salaries) {
+//
+//   let max = 0;
+//   let maxName = null;
+//
+//   for(const [name, salary] of Object.entries(salaries)) {
+//     if (max < salary) {
+//       max = salary;
+//       maxName = name;
+//     }
+//   }
+//
+//   return maxName;
+// }
+//
+// alert( topSalary(salaries) );
