@@ -646,3 +646,208 @@
 // }
 //
 // alert( topSalary(salaries) );
+
+
+
+// 5.11 Date and time
+
+// 5.11.1
+// let date = new Date(2012, 1, 20, 3, 12);
+// // Other solution:
+// let date = new Date("February 20, 2012 03:12:00");
+// alert( date );
+
+// 5.11.2
+// function getWeekDay(date) {
+//   let days = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
+//
+//   return days[date.getDay()];
+// }
+//
+// let date = new Date(2012, 0, 3); // 3 Jan 2012
+// alert( getWeekDay(date) ); // "TU"
+
+// 5.11.3
+// function getLocalDay(date) {
+//   let day = date.getDay();
+//
+//   return (day === 0) ? 7 : day;
+// }
+
+// 5.11.4
+// function getDateAgo(date, days) {
+//   let newDate = new Date(date);
+//   newDate.setDate(date.getDate() - days);
+//
+//   return newDate.getDate();
+// }
+//
+// let date = new Date(2015, 0, 2);
+//
+// alert( getDateAgo(date, 1) ); // 1, (1 Jan 2015)
+// alert( getDateAgo(date, 2) ); // 31, (31 Dec 2014)
+// alert( getDateAgo(date, 365) ); // 2, (2 Jan 2014)
+
+// 5.11.5
+// function getLastDayOfMonth(year, month) {
+//   let date = new Date(year, month + 1, 0);
+//
+//   return date.getDate()
+// }
+//
+// alert( getLastDayOfMonth(2012, 0) ); // 31
+// alert( getLastDayOfMonth(2012, 1) ); // 29
+// alert( getLastDayOfMonth(2013, 1) ); // 28
+
+// 5.11.6
+// // My solution:
+// function getSecondsToday() {
+//   let today = new Date();
+//
+//   today.setHours(0, 0, 0, 0);
+//
+//   return Math.round((Date.now() - today.getTime()) / 1000);
+// }
+//
+// // Original solution number 1:
+// function getSecondsToday() {
+//   let now = new Date();
+//
+//   // create an object using the current day/month/year
+//   let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+//
+//   let diff = now - today; // ms difference
+//   return Math.round(diff / 1000); // make seconds
+// }
+//
+// // Original solution number 2:
+// function getSecondsToday() {
+//   let d = new Date();
+//   return d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
+// }
+//
+// alert( getSecondsToday() );
+
+// 5.11.7
+// // My solution:
+// function getSecondsToTomorrow() {
+//   let now = new Date();
+//   let tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1)
+//
+//   return Math.round((tomorrow - now) / 1000);
+// }
+//
+// // Alternative solution:
+// function getSecondsToTomorrow() {
+//   let now = new Date();
+//   let hour = now.getHours();
+//   let minutes = now.getMinutes();
+//   let seconds = now.getSeconds();
+//   let totalSecondsToday = (hour * 60 + minutes) * 60 + seconds;
+//   let totalSecondsInADay = 86400;
+//
+//   return totalSecondsInADay - totalSecondsToday;
+// }
+//
+// alert( getSecondsToTomorrow() );
+
+// 5.11.8
+// My solution:
+// function formatDate(date) {
+//   let diff = Date.now() - date;
+//
+//   if (diff < 1000) {
+//     return "right now";
+//   } else if (diff < 60 * 1000) {
+//     return `${Math.floor(diff / 1000)} sec. ago`;
+//   } else if (diff < 60 * 60 * 1000) {
+//     return `${Math.floor(diff / (60 * 1000))} min. ago`;
+//   }
+//
+//   let day = date.getDate();
+//   let month = date.getMonth() + 1;
+//   let year = date.getFullYear();
+//   let hours = date.getHours();
+//   let minutes = date.getMinutes();
+//
+//   day = (day < 10) ? '0' + day : day;
+//   month = (month < 10) ? '0' + month : month;
+//   year = String(year).slice(-2);
+//   hours = (hours < 10) ? '0' + hours : hours;
+//   minutes = (minutes < 10) ? '0' + minutes : minutes;
+//
+//   return `${day}.${month}.${year} ${hours}:${minutes}`;
+// }
+//
+// // Original solution number 1:
+// function formatDate(date) {
+//   let diff = new Date() - date; // the difference in milliseconds
+//
+//   if (diff < 1000) { // less than 1 second
+//     return 'right now';
+//   }
+//
+//   let sec = Math.floor(diff / 1000); // convert diff to seconds
+//
+//   if (sec < 60) {
+//     return sec + ' sec. ago';
+//   }
+//
+//   let min = Math.floor(diff / 60000); // convert diff to minutes
+//   if (min < 60) {
+//     return min + ' min. ago';
+//   }
+//
+//   // format the date
+//   // add leading zeroes to single-digit day/month/hours/minutes
+//   let d = date;
+//   d = [
+//     '0' + d.getDate(),
+//     '0' + (d.getMonth() + 1),
+//     '' + d.getFullYear(),
+//     '0' + d.getHours(),
+//     '0' + d.getMinutes()
+//   ].map(component => component.slice(-2)); // take last 2 digits of every component
+//
+//   // join the components into date
+//   return d.slice(0, 3).join('.') + ' ' + d.slice(3).join(':');
+// }
+//
+// // Original solution number 2:
+// function formatDate(date) {
+//   let dayOfMonth = date.getDate();
+//   let month = date.getMonth() + 1;
+//   let year = date.getFullYear();
+//   let hour = date.getHours();
+//   let minutes = date.getMinutes();
+//   let diffMs = new Date() - date;
+//   let diffSec = Math.round(diffMs / 1000);
+//   let diffMin = diffSec / 60;
+//   let diffHour = diffMin / 60;
+//
+//   // formatting
+//   year = year.toString().slice(-2);
+//   month = month < 10 ? '0' + month : month;
+//   dayOfMonth = dayOfMonth < 10 ? '0' + dayOfMonth : dayOfMonth;
+//   hour = hour < 10 ? '0' + hour : hour;
+//   minutes = minutes < 10 ? '0' + minutes : minutes;
+//
+//   if (diffSec < 1) {
+//     return 'right now';
+//   } else if (diffMin < 1) {
+//     return `${diffSec} sec. ago`
+//   } else if (diffHour < 1) {
+//     return `${diffMin} min. ago`
+//   } else {
+//     return `${dayOfMonth}.${month}.${year} ${hour}:${minutes}`
+//   }
+// }
+//
+// alert( formatDate(new Date(new Date - 1)) ); // "right now"
+//
+// alert( formatDate(new Date(new Date - 30 * 1000)) ); // "30 sec. ago"
+//
+// alert( formatDate(new Date(new Date - 5 * 60 * 1000)) ); // "5 min. ago"
+//
+// // yesterday's date like 31.12.16 20:00
+// alert( formatDate(new Date(new Date - 86400 * 1000)) );
