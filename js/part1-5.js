@@ -752,7 +752,7 @@
 // alert( getSecondsToTomorrow() );
 
 // 5.11.8
-// My solution:
+// // My solution:
 // function formatDate(date) {
 //   let diff = Date.now() - date;
 //
