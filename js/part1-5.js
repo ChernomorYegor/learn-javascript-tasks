@@ -851,3 +851,40 @@
 //
 // // yesterday's date like 31.12.16 20:00
 // alert( formatDate(new Date(new Date - 86400 * 1000)) );
+
+
+
+// 5.12 JSON methods, toJSON
+
+// 5.12.1
+// let user = {
+//   name: "John Smith",
+//   age: 35
+// };
+//
+// let user2 = JSON.parse(JSON.stringify(user));
+
+// 5.12.2
+// let room = {
+//   number: 23
+// };
+//
+// let meetup = {
+//   title: "Conference",
+//   occupiedBy: [{name: "John"}, {name: "Alice"}],
+//   place: room
+// };
+//
+// // circular references
+// room.occupiedBy = meetup;
+// meetup.self = meetup;
+//
+// // My solution:
+// alert( JSON.stringify(meetup, function replacer(key, value) {
+//   return ((key === 'occupiedBy' && !Array.isArray(value)) || key === 'self') ? undefined : value;
+// }));
+//
+// // Original right solution:
+// alert( JSON.stringify(meetup, function replacer(key, value) {
+//   return (key != "" && value == meetup) ? undefined : value;
+// })); // key=="" is the first call where it's normal that value is meetup
