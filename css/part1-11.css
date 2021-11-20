@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* Part 1. The JavaScript language */
+
+
+/* 11.1 Introduction: callbacks */
+/*
+.circle {
+  position: fixed;
+  background-color: red;
+  border-radius: 50%;
+  transition-duration: 2s;
+  transition-property: width, height;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.message-ball{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+*/
