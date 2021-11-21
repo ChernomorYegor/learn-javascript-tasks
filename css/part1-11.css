@@ -2,8 +2,9 @@
 /* Part 1. The JavaScript language */
 
 
-/* 11.1 Introduction: callbacks */
-/*
+/* 11.1.1 Introduction: callbacks */
+/* 11.2.3 Promise */
+
 .circle {
   position: fixed;
   background-color: red;
@@ -19,4 +20,3 @@
   align-items: center;
   font-size: 20px;
 }
-*/
