@@ -79,3 +79,11 @@
 //     }, 0);
 //   })
 // }
+
+
+
+// 11.3 Promises chaining
+// promise.then(f1).catch(f2);
+// // Versus:
+// promise.then(f1, f2);
+// // Answer: They don't work the same. The error is unhandled without .catch() in the second case.
