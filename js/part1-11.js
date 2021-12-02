@@ -83,6 +83,8 @@
 
 
 // 11.3 Promises chaining
+
+// 11.3.1
 // promise.then(f1).catch(f2);
 // // Versus:
 // promise.then(f1, f2);
