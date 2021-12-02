@@ -89,3 +89,16 @@
 // // Versus:
 // promise.then(f1, f2);
 // // Answer: They don't work the same. The error is unhandled without .catch() in the second case.
+
+
+
+// 11.4 Error handling with promises
+
+// 11.4.1
+// new Promise(function(resolve, reject) {
+//   setTimeout(() => {
+//     throw new Error("Whoops!");
+//   }, 1000);
+// }).catch(alert);
+// // Nope, it won't. The error is generated not while the executor is running, but later.
+// // The promise can’t handle it because try..catch" around the function code handles only synchronous errors.
