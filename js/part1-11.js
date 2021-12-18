@@ -102,3 +102,138 @@
 // }).catch(alert);
 // // Nope, it won't. The error is generated not while the executor is running, but later.
 // // The promise can’t handle it because try..catch" around the function code handles only synchronous errors.
+
+
+
+// 11.8 Async/await
+
+// 11.8.1
+// // Before:
+// function loadJson(url) {
+//   return fetch(url)
+//     .then(response => {
+//       if (response.status == 200) {
+//         return response.json();
+//       } else {
+//         throw new Error(response.status);
+//       }
+//     });
+// }
+//
+// loadJson('no-such-user.json')
+//   .catch(alert); // Error: 404
+//
+// // After:
+// async function loadJson(url) {
+//   let response = await fetch(url);
+//
+//   if (response.status == 200) {
+//     let json = await response.json();
+//     return json;
+//   } else {
+//     throw new Error(response.status);
+//   }
+// }
+//
+// loadJson('no-such-user.json')
+//    .catch(alert); // Error: 404
+
+// 11.8.2
+// // Before:
+// class HttpError extends Error {
+//   constructor(response) {
+//     super(`${response.status} for ${response.url}`);
+//     this.name = 'HttpError';
+//     this.response = response;
+//   }
+// }
+//
+// function loadJson(url) {
+//   return fetch(url)
+//     .then(response => {
+//       if (response.status == 200) {
+//         return response.json();
+//       } else {
+//         throw new HttpError(response);
+//       }
+//     });
+// }
+//
+// // Ask for a user name until github returns a valid user
+// function demoGithubUser() {
+//   let name = prompt("Enter a name?", "iliakan");
+//
+//   return loadJson(`https://api.github.com/users/${name}`)
+//     .then(user => {
+//       alert(`Full name: ${user.name}.`);
+//       return user;
+//     })
+//     .catch(err => {
+//       if (err instanceof HttpError && err.response.status == 404) {
+//         alert("No such user, please reenter.");
+//         return demoGithubUser();
+//       } else {
+//         throw err;
+//       }
+//     });
+// }
+//
+// demoGithubUser();
+//
+// // After:
+// class HttpError extends Error {
+//   constructor(response) {
+//     super(`${response.status} for ${response.url}`);
+//     this.name = 'HttpError';
+//     this.response = response;
+//   }
+// }
+//
+// async function loadJson(url) {
+//   let response = await fetch(url);
+//
+//   if (response.status == 200) {
+//     let json = await response.json();
+//     return json;
+//   } else {
+//     throw new HttpError(response);
+//   }
+// }
+//
+// // Ask for a user name until github returns a valid user
+// async function demoGithubUser() {
+//   let user;
+//
+//   while(true) {
+//     let name = prompt('Enter a name?', 'iliakan');
+//
+//     try {
+//       user = await loadJson(`https://api.github.com/users/${name}`);
+//       break;
+//     } catch(err) {
+//       if (err instanceof HttpError && err.response.status == 404) {
+//         alert('No such user, please reenter.');
+//       } else {
+//         throw err;
+//       }
+//     }
+//   }
+//
+//   alert(`Full name: ${user.name}.`);
+//   return user;
+// }
+//
+// demoGithubUser();
+
+// 11.8.3
+// async function wait() {
+//   await new Promise(resolve => setTimeout(resolve, 1000));
+//
+//   return 10;
+// }
+//
+// function f() {
+//   wait().then(resolve => alert(resolve));
+// }
+//
+// f();
