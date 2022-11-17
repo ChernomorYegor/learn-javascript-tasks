@@ -2,6 +2,14 @@
 // Part 1. The JavaScript language
 
 
+// 2.1 Hello, world!
+
+// 2.1.2
+// alert('I’m JavaScript!');
+// // Remark: I changed the file name from "alert.js" to "part1-2.js" and put it in the folder "js".
+
+
+
 // 2.4 Variables
 
 // 2.4.1
