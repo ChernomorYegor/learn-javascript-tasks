@@ -71,7 +71,6 @@
 // "$" + 4 + 5 // "$45"
 // "4" - 2 // 2
 // "4px" - 2 // NaN
-// 7 / 0 // Infinity
 // "  -9  " + 5 // "  -9  5"
 // "  -9  " - 5 // -14
 // null + 1 // 1
@@ -83,7 +82,7 @@
 // let b = prompt("Второе число?", "2");
 //
 // alert(a + b); // 12
-// alert(+a + +b); // 3 - correct solution
+// alert(+a + +b); // 3 - the correct solution
 
 
 
