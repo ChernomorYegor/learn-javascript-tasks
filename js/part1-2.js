@@ -233,10 +233,9 @@
 // My version:
 // let num = 0;
 //
-// while (num <= 100) {
+// do {
 //   num = prompt("Enter a number greater than 100?", "0");
-//   if (num == null) break;
-// }
+// } while (num <= 100 && num !== null)
 //
 // Original version:
 // let num;
