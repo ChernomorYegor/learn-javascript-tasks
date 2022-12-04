@@ -249,22 +249,18 @@
 // let n = prompt("Find all prime numbers up to", "");
 //
 // if (!n) {
-//  alert("Canceled");
+//   alert("Canceled");
 // }
 //
-// for (let i = 2; i < n; i++) {
-//   let isPrime = true;
+// nextNum: for (let i = 2; i <= n; i++) {
 //
 //   for (let j = i - 1; j >= 2; j--) {
 //     if (i % j === 0) {
-//       isPrime = false;
-//       break;
+//       continue nextNum;
 //     }
 //   }
 //
-//   if (isPrime) {
-//     alert( i );
-//   }
+//   alert(i);
 // }
 //
 // Original version:
