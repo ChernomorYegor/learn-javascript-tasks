@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // Part 2. Browser: Document, Events, Interfaces
 
 

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // Part 3. Additional articles
 
 
